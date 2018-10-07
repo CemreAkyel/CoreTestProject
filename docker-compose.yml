@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  coretestproject:
+    image: ${DOCKER_REGISTRY}coretestproject
+    build:
+      context: .
+      dockerfile: CoreTestProject/Dockerfile
