@@ -14,7 +14,7 @@ namespace CoreTestProject.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2 wefdwerfge" };
+            return new string[] { "value1", "value2 wefdwerfge", " s sdsd sd" };
         }
 
         // GET api/values/5
