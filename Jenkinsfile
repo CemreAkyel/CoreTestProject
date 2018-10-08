@@ -12,10 +12,11 @@ pipeline {
             }
         } 
 		stage('Building') {
-
-			app = docker.build("coretestproject")
+			steps {
+				app = docker.build("coretestproject")
 			
                 echo 'Building from git..'
+				}
 		}
     }
 }
