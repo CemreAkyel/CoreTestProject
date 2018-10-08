@@ -1,23 +1,9 @@
-pipeline {
-    agent any
-    stages {
-		stage('Start') {
-            steps {
-                echo 'starting from git..'
-            }
-        }
-		stage('Checkout') {
-            steps {
-				checkout scm
-            }
-        } 
-		stage('Building') {
-			steps {
-				app = docker.build("coretestproject")
-			
-                echo 'Building from git..'
-				}
-		}
-    }
-}
+node {
+  stage('HelloWorld') {
+    echo 'Hello World'
+  }
 
+  stage('secondStage') {
+    echo 'second Stage 3e2r423r4' 
+  }
+}
