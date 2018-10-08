@@ -4,12 +4,13 @@
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
+		 sh 'echo "Cloninggggg...."'
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+		sh 'echo "BUILDDDDDD...."'
         app = docker.build("coretestproject")
     }
 
