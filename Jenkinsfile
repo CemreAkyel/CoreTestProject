@@ -9,7 +9,7 @@ node {
 		echo 'ending of checkout!!!!....'
     }
 
-   stage('Image from docker hub){
+   stage('Image from docker hub'{
     image = docker.image('cnakyel/testrepo:firsttry')
     image.pull() 
 	echo 	"ending"
