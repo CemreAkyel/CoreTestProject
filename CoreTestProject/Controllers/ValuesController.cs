@@ -21,7 +21,7 @@ namespace CoreTestProject.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "valu dse dsv";
         }
 
         // POST api/values
