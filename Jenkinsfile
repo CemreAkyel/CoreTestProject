@@ -1,17 +1,22 @@
 node {
-  def app
+  def image
   stage('start stage') {
-    echo 'Hello World'
+	echo 'Hello World'
   }
-    stage('Check repository') {
-        
+    stage('Check repository') {        
         checkout scm
 		echo 'ending of checkout!!!!....'
     }
 
-   stage('docker hub stage'){
+   stage('Pull From Docker Hub'){
     image = docker.image('cnakyel/testrepo:firsttry')
     image.pull()
-	echo 	"end..."
+	echo 	"Image pulled from docker hub successfully..."
    }
+   
+   stage('Run Image'){
+	myContainer = image.run('--name  test-from-dockerhub-container -p 8080:3770')
+	echo 	"Run image"
+   }
+   
 }
