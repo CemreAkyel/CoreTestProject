@@ -1,11 +1,10 @@
 ﻿pipeline {	
-	agent{ 
-	   dockerfile true
-	 }
+	agent any
 	  stages {
 			stage('HelloWorld') {
 			  steps {
-				echo 'Hello World'
+				sh 'docker-compose -f docker-compose.yml build'
+				sh 'docker-compose -f docker-compose.yml up  -p composeTestProject --abort-on-container-exit'
 			  }
 			}      
 		}
@@ -13,24 +12,5 @@
 
 
 
-#///////
 
-
-node {
-  def app
-  stage('HelloWorld') {
-    echo 'Hello World'
-  }
-    stage('Clone repository') {
-        
-        checkout scm
-		echo 'ending of checkout!!!!....'
-    }
-
-    stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-        app = docker.build("coretestproject")
-    }
-}
 
