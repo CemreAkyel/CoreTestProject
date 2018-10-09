@@ -10,8 +10,10 @@ node {
     }
 
    stage{
-    image = docker.image('cnakyel/testrepo:firsttry')
-    image.pull() 
+   /* image = docker.image('cnakyel/testrepo:firsttry')
+    image.pull() */
+	
+	docker run hello-world
 	echo 	"ending"
    }
 }
