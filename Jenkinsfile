@@ -13,7 +13,8 @@ node {
    /* image = docker.image('cnakyel/testrepo:firsttry')
     image.pull() */
 	
-	docker run hello-world
+	image=docker.image('hello-world')
+	
 	echo 	"ending"
    }
 }
