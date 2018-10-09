@@ -13,7 +13,7 @@ node {
     image.pull()*/
 	
 	docker-compose -f docker-compose.yml build
-    docker-compose -f docker-compose.yml up  -p dockerComposeProjectTest  --abort-on-container-exit
+    docker-compose -f docker-compose.yml -p dockerComposeProjectTest up    --abort-on-container-exit
 	
 	echo 	"Image pulled from docker hub successfully..."
    }
