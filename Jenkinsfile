@@ -1,6 +1,6 @@
 node {
   def app
-  stage('HelloWorld') {
+  stage('start stage') {
     echo 'Hello World'
   }
     stage('Clone repository') {
@@ -9,7 +9,7 @@ node {
 		echo 'ending of checkout!!!!....'
     }
 
-   stage{
+   stage('docker hub stage'){
    /* image = docker.image('cnakyel/testrepo:firsttry')
     image.pull() */
 	
