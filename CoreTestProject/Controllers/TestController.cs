@@ -14,7 +14,7 @@ namespace CoreTestProject.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "jenkins test 123...", "dockore compose test","webhook test"};
+            return new string[] { "jenkins test", "dockore compose test","webhook test"};
         }
     }
 }
