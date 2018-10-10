@@ -6,3 +6,12 @@ services:
     build:
       context: .
       dockerfile: CoreTestProject/Dockerfile
+    environment:
+      - VIRTUAL_HOST=test.umis.sakarya.edu.tr
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external:
+      name: nginx-network
