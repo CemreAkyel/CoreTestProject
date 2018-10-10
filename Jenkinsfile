@@ -1,15 +1,26 @@
 node {
   def image
-  stage('Start stage') {
+  stage('start stage') {
 	echo 'Hello World'
   }
-   stage(' DockerCompose Stage'){  
-		sh 'docker-compose -f docker-compose.yml build'		
-		echo 	"docker-compose build completed successfully..."
-   }    
-	stage('DockerCompose Up Stage'){
-		sh 'docker-compose -f docker-compose.yml -p dockerComposeProjectTest up -d' 
-		/*--abort-on-container-exit*/	
-		echo 	"docker-compose up completed successfully..."
-	}
+    stage('Check repository') {        
+        checkout scm
+		echo 'ending of checkout!!!!....'
+    }
+
+   stage('Pull From Docker Hub'){
+   /* image = docker.image('cnakyel/testrepo:firsttry')
+    image.pull()*/
+	
+	docker-compose -f docker-compose.yml build
+    docker-compose -f docker-compose.yml -p dockerComposeProjectTest up    --abort-on-container-exit
+	
+	echo 	"Image pulled from docker hub successfully..."
+   }
+   
+   stage('Run Image'){
+	/*myContainer = image.run('--name  test-from-dockerhub-container -p 8080:37700') */
+	echo 	"Run image"
+   }
+   
 }
